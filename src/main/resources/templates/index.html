@@ -1,6 +1,13 @@
 <!DOCTYPE html>
+<!-- Déclaration du type de document HTML5 -->
 <html th:replace="~{layout :: frag_layout(~{::main})}">
+<!--
+    Cette page utilise le layout Thymeleaf défini dans layout.html.
+    Le fragment "frag_layout" est appelé et le contenu du <main> ci-dessous
+    est injecté à l'emplacement prévu dans le layout.
+-->
 <main>
+    <!-- Contenu spécifique à cette page -->
     <h1>
         Tu peux être tout ce que tu veux
     </h1>

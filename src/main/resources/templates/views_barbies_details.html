@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html th:replace="~{layout :: frag_layout(~{::main})}">
 <main>
-<form>
-    <ul class="flex-outer">
-        <h1>Détail de la Barbie</h1>
-        <li>
-            <label for="idName">Name : </label>
-            <input id="idName" readonly th:text="${listBarbiesByID.name}" type="text">
-        </li>
-        <li>
-            <label for="idType">Type : </label>
-            <input id="idType" readonly th:text="${listBarbiesByID.type.name}" type="text">
-        </li>
-    </ul>
+    <form th:objet="${listBarbiesByID}">
+        <ul class="flex-outer">
+            <h1>Détail de la Barbie</h1>
+            <li>
+                <label for="idName">Name : </label>
+                <input id="idName" readonly th:value="*{name}" type="text">
+            </li>
+            <li>
+                <label for="idType">Type : </label>
+                <input id="idType" readonly th:value="*{type.name}" type="text">
+            </li>
+        </ul>
     </form>
 
 </main>

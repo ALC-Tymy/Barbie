@@ -1,16 +1,25 @@
-
 <html lang="fr" th:fragment="frag_layout(content)">
 <head>
+    <!-- Encodage des caractères -->
     <meta charset="UTF-8">
-    <!--  la abalise sera remplacée par le contenu de title -->
+
+    <!-- Le titre de la page affiché dans l'onglet du navigateur -->
     <title>Barbies</title>
 
+    <!-- Feuille de style principale -->
     <link rel="stylesheet" href="/css/general.css">
 </head>
+
 <body class="master">
+
+<!-- En-tête du site -->
 <header>
     <h1 id="nav-title">Barbies</h1>
+
+    <!-- Image du logo -->
     <img src="/image/barbie.jpg" />
+
+    <!-- Menu de navigation principal -->
     <nav>
         <ul>
             <li><a href="/">Accueil</a></li>
@@ -22,10 +31,13 @@
     </nav>
 </header>
 
+<!-- Zone centrale remplacée dynamiquement par Thymeleaf -->
 <main th:replace="${content}"></main>
 
+<!-- Pied de page -->
 <footer>
     <p>&copy; Mattel</p>
 </footer>
+
 </body>
 </html>

@@ -99,11 +99,19 @@ public class HomeController {
         return "redirect:/types";
     }
 
+    /**
+     *
+     * @return redirection sur la vue barbie
+     */
     @PostMapping("/barbie/add")
     public String addBarbies(){
         return "redirect:/barbies";
     }
 
+    /**
+     *
+     * @return redirection sur la vue types
+     */
     @PostMapping("/types/add")
     public String addTypes(){
         return "redirect:/types";

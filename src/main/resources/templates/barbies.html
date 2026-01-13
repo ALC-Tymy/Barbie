@@ -1,10 +1,21 @@
 <!DOCTYPE html>
+<!-- Déclaration du document HTML5 -->
+
 <html th:replace="~{layout :: frag_layout(~{::main})}">
+<!--
+    Cette page utilise le layout principal (layout.html)
+    et injecte le contenu du <main> dans le fragment frag_layout.
+-->
+
 <main>
+    <!-- Titre de la page -->
     <h1>
         Pages barbies
     </h1>
+
+    <!-- Tableau d'affichage des Barbies -->
     <table>
+        <!-- En-tête du tableau -->
         <tr>
             <th>Nom</th>
             <th>Type</th>
@@ -12,14 +23,31 @@
             <th>Détails</th>
         </tr>
 
+        <!--
+            Boucle Thymeleaf sur la liste des Barbies
+            listBarbiesAll est fournie par le contrôleur
+        -->
         <tr th:each="barbie : ${listBarbiesAll}">
+            <!-- Nom de la Barbie -->
             <td th:text="${barbie.name}"></td>
+
+            <!-- Type de la Barbie -->
             <td th:text="${barbie.type.name}"></td>
-            <td><a th:href="@{/barbie/delete(id=${barbie.getId()})}">Supprimer</a></td>
-            <td><a th:href="@{/barbie/details(id=${barbie.getId()})}">Détails</a></td>
+
+            <!-- Lien de suppression -->
+            <td>
+                <a th:href="@{/barbie/delete(id=${barbie.getId()})}">
+                    Supprimer
+                </a>
+            </td>
+
+            <!-- Lien vers la page de détails -->
+            <td>
+                <a th:href="@{/barbie/details(id=${barbie.getId()})}">
+                    Détails
+                </a>
+            </td>
         </tr>
     </table>
-
-
 </main>
 </html>

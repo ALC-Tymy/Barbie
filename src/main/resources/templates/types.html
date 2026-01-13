@@ -1,23 +1,41 @@
 <!DOCTYPE html>
-<html th:replace="~{layout :: frag_layout(~{::main})}">
-<main>
-    <h1>
-        Pages barbies
-    </h1>
-    <table>
-        <tr>
+<!-- Déclaration du document HTML5 -->
 
+<html th:replace="~{layout :: frag_layout(~{::main})}">
+<!--
+    Cette page utilise le layout principal (layout.html)
+    et injecte le contenu du <main> dans le fragment frag_layout.
+-->
+
+<main>
+    <!-- Titre de la page -->
+    <h1>
+        Pages types
+    </h1>
+
+    <!-- Tableau d'affichage des types -->
+    <table>
+        <!-- En-tête du tableau -->
+        <tr>
             <th>Type</th>
             <th>Supprimer</th>
-
         </tr>
 
+        <!--
+            Boucle Thymeleaf sur la liste des types
+            listTypesAll est fournie par le contrôleur
+        -->
         <tr th:each="type : ${listTypesAll}">
+            <!-- Nom du type -->
             <td th:text="${type.name}"></td>
-            <td><a th:href="@{/barbie/delete(id=${type.getId()})}">Supprimer</a></td>
+
+            <!-- Lien de suppression du type -->
+            <td>
+                <a th:href="@{/barbie/delete(id=${type.getId()})}">
+                    Supprimer
+                </a>
+            </td>
         </tr>
     </table>
-
-
 </main>
 </html>
