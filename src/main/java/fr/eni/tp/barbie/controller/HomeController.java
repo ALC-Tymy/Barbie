@@ -10,25 +10,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
-    ServiceBarbie serviceBarbie;
-    ServiceType serviceType;
+    private ServiceBarbie serviceBarbie;
+    private ServiceType serviceType;
 
+    /**
+     * Constructeur du contrôleur.
+     *
+     * @param serviceBarbie service de gestion des barbies
+     * @param serviceType service de gestion des types
+     */
     public HomeController(ServiceBarbie serviceBarbie, ServiceType serviceType) {
         this.serviceBarbie = serviceBarbie;
         this.serviceType = serviceType;
     }
 
-    /*
-     * @return la page d'acceuil
+    /**
+     * Affiche la page d'accueil.
+     *
+     * @return le nom de la vue "index"
      */
-
     @GetMapping("/")
     public String index() {
         return "index";
     }
 
-    /*
-     * @return la page barbie et affiche toutes les barbies.
+    /**
+     * Affiche la liste de toutes les barbies.
+     *
+     * @param model objet permettant de transmettre les données à la vue
+     * @return la vue "barbies"
      */
     @GetMapping("/barbies")
     public String displayBarbies(Model model) {
@@ -36,38 +46,41 @@ public class HomeController {
         return "barbies";
     }
 
-    /*
-     * @return retourne la vue le la page barbie détail en fonction de l'id.
+    /**
+     * Affiche le détail d'une barbie en fonction de son identifiant.
+     *
+     * @param id identifiant de la barbie
+     * @param model objet permettant de transmettre les données à la vue
+     * @return la vue de détail de la barbie
      */
-
     @GetMapping("/barbie/details")
     public String displayBarbiesByID(@RequestParam(name = "id") long id, Model model) {
         model.addAttribute("listBarbiesByID", this.serviceBarbie.getBarbie(id));
         return "views_barbies_details";
     }
 
-    /*
-     * @return Supprime la barbie par l'id et retourne sur la page de la barbie
+    /**
+     * Supprime une barbie à partir de son identifiant.
+     *
+     * @param id identifiant de la barbie à supprimer
+     * @param model objet permettant de transmettre les données à la vue
+     * @return redirection vers la page listant toutes les barbies
      */
-
     @GetMapping("/barbie/delete")
     public String deleteBarbieById(@RequestParam(name = "id") long id, Model model) {
         model.addAttribute("deleteBarbieByID", this.serviceBarbie.deleteBarbie(id));
         return "redirect:/barbies";
     }
 
+    /**
+     * Affiche la liste de tous les types de barbies.
+     *
+     * @param model objet permettant de transmettre les données à la vue
+     * @return la vue "types"
+     */
     @GetMapping("/types")
     public String displayTypes(Model model) {
         model.addAttribute("listTypesAll", this.serviceType.getAll());
-        return "redirect:/types";
+        return "types";
     }
-
-
-
-
-
-
-
-
-
 }
