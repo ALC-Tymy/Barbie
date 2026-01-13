@@ -3,6 +3,7 @@ package fr.eni.tp.barbie.service;
 
 import fr.eni.tp.barbie.bo.Type;
 import fr.eni.tp.barbie.repository.TypeDao;
+import org.jspecify.annotations.Nullable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +33,8 @@ public class ServiceTypeImpl implements ServiceType {
     }
 
     @Override
-    public void deleteType(long id) {
+    public @Nullable Object deleteType(long id) {
         this.typeDao.deleteType(id);
+        return null;
     }
 }

@@ -2,6 +2,7 @@ package fr.eni.tp.barbie.service;
 
 
 import fr.eni.tp.barbie.bo.Type;
+import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 
@@ -12,5 +13,5 @@ public interface ServiceType {
 
     Type getType(long id);
 
-    void deleteType(long id);
+    @Nullable Object deleteType(long id);
 }
