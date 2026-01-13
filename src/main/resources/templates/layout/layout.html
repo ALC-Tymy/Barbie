@@ -1,0 +1,31 @@
+
+<html data-th-fragment="frag_layout(content)">
+<head>
+    <meta charset="ISO-8859-1">
+    <!--  la abalise sera remplacée par le contenu de title -->
+    <title>Barbies</title>
+
+    <link rel="stylesheet" href="/css/general.css">
+</head>
+<body class="master">
+<header>
+    <h1 id="nav-title">Barbies</h1>
+<!--    <img src="/image/barbie.jpg" />-->
+    <nav>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/barbies">Barbies</a></li>
+            <li><a href="/barbies/add">Ajout barbies</a></li>
+            <li><a href="/types">Types</a></li>
+            <li><a href="/types/add">Ajout Type</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main data-th-replace="${content}"></main>
+
+<footer>
+    <p>&copy; Mattel</p>
+</footer>
+</body>
+</html>
