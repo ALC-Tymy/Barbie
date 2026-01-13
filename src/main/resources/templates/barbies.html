@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html th:replace="~{layout :: frag_layout(~{::main})}">
+<main>
+    <h1>
+        Pages barbies
+    </h1>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Supprimer</th>
+            <th>Détails</th>
+        </tr>
+
+        <tr th:each="barbie : ${listBarbiesAll}">
+            <td th:text="${barbie.name}"></td>
+            <td th:text="${barbie.type.name}"></td>
+            <td><a th:href="@{/barbie/delete(id=${barbie.getId()})}">Supprimer</a></td>
+            <td><a th:href="@{/barbie/details(id=${barbie.getId()})}">Détails</a></td>
+        </tr>
+    </table>
+
+
+</main>
+</html>
