@@ -11,12 +11,12 @@ import java.util.List;
 public class BarbieDaoMock implements BarbieDao {
 
     List<Barbie> list = new ArrayList<Barbie>();
-    private static int index = 1;
+    private static int index = 4;
 
     public BarbieDaoMock() {
         list.add(new Barbie(1, "Brenda", new Type(1, "pyjama party")));
-        list.add(new Barbie(1, "Tyra", new Type(2, "fée du logis")));
-        list.add(new Barbie(1, "Amanda", new Type(3, "puberté")));
+        list.add(new Barbie(2, "Tyra", new Type(2, "fée du logis")));
+        list.add(new Barbie(3, "Amanda", new Type(3, "puberté")));
     }
 
     @Override

@@ -1,8 +1,8 @@
 
-<html data-th-fragment="frag_layout(content)">
+<html lang="fr" th:fragment="frag_layout(content)">
 <head>
-    <meta charset="ISO-8859-1">
-    <!--  la abalise sera remplacée par le contenu de title -->
+    <meta charset="UTF-8">
+    <!--  la abalise sera remplacÃ©e par le contenu de title -->
     <title>Barbies</title>
 
     <link rel="stylesheet" href="/css/general.css">
@@ -10,10 +10,10 @@
 <body class="master">
 <header>
     <h1 id="nav-title">Barbies</h1>
-<!--    <img src="/image/barbie.jpg" />-->
+    <img src="/image/barbie.jpg" />
     <nav>
         <ul>
-            <li><a href="/">Accueil</a></li>
+            <li><a href="/static">Accueil</a></li>
             <li><a href="/barbies">Barbies</a></li>
             <li><a href="/barbies/add">Ajout barbies</a></li>
             <li><a href="/types">Types</a></li>
@@ -22,7 +22,7 @@
     </nav>
 </header>
 
-<main data-th-replace="${content}"></main>
+<main th:replace="${content}"></main>
 
 <footer>
     <p>&copy; Mattel</p>
