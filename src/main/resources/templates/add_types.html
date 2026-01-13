@@ -2,17 +2,17 @@
 <html th:replace="~{layout :: frag_layout(~{::main})}">
 <main>
     <h1>Détail de la Barbie</h1>
-    <form th:object="${listBarbiesByID}">
+    <form>
         <ul class="flex-outer">
             <li>
                 <label for="idName">Name : </label>
-                <input id="idName" th:value="*{name}" type="text">
+                <input id="idName" type="text">
             </li>
             <li>
                 <label for="idType">Type : </label>
-                <input id="idType" th:value="*{type.name}" type="text">
+                <input id="idType" type="text">
             </li>
-            <button type="submit" value="Mise à jour">Mise à jour</button>
+            <button type="submit" value="Ajouter Barbie">Ajouter Barbie</button>
         </ul>
     </form>
 

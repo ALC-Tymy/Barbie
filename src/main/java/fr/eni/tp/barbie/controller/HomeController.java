@@ -103,9 +103,26 @@ public class HomeController {
      *
      * @return redirection sur la vue barbie
      */
+    @GetMapping("/barbie/add")
+    public String displayAddBarbies(){
+        return "add_barbies";
+    }
+    /**
+     *
+     * @return redirection sur la vue barbie
+     */
     @PostMapping("/barbie/add")
     public String addBarbies(){
         return "redirect:/barbies";
+    }
+
+    /**
+     *
+     * @return redirection sur la vue types
+     */
+    @GetMapping("/types/add")
+    public String displayAddTypes(){
+        return "add_types";
     }
 
     /**
